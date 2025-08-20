@@ -1,3 +1,5 @@
+package studentprototype;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,4 +82,9 @@ public class Student implements Prototype<Student> {
     public Student copy() {
         return new Student(this);
     }
+
+/*    @Override
+    public studentprototype.Student clone() {
+        return new studentprototype.Student(this);
+    }*/
 }

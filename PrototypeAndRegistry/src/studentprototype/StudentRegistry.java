@@ -1,3 +1,5 @@
+package studentprototype;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +22,7 @@ public class StudentRegistry {
     }
 
    /* This method returns a deep copy of the student object
-    using the copy method defined in the Prototype interface*/
+    using the copy method defined in the studentprototype.Prototype interface*/
     public Student getStudentNewStudentObj(String studentIdKey) {
         return studentsHMap.get(studentIdKey).copy();
     }

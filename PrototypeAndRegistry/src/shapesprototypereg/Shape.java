@@ -1,0 +1,61 @@
+package shapesprototypereg;
+
+import java.util.Objects;
+
+public class Shape implements Prototype<Shape>{
+    public int x;
+    public int y;
+    public String color;
+
+    public Shape(){}
+
+    public Shape(int x, int y, String color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    //Below constructor is used to create a deep copy of the Shape object
+    protected Shape(Shape shape){
+        this.x = shape.getX();
+        this.y = shape.getY();
+        this.color = shape.getColor();
+    }
+
+    @Override
+    public Shape copy() {
+        return new Shape(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Shape)) return false;
+        Shape shape = (Shape) o;
+        return x == shape.x && y == shape.y && Objects.equals(color, shape.color);
+    }
+
+}
