@@ -2,11 +2,11 @@ public class NotificationFactory {
 
     public static Notification createNotification(NotificationType type) {
         switch (type) {
-            case EMAIL:
+            case NotificationType.EMAIL:
                 return new EmailNotification();
-            case SMS:
+            case NotificationType.SMS:
                 return new SmsNotification();
-            case PUSH:
+            case NotificationType.PUSH:
                 return new PushNotification();
             default:
                 throw new IllegalArgumentException("Unknown notification type: " + type);
