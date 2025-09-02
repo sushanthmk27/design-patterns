@@ -9,22 +9,22 @@ public class Meal {
         this.mealId = mealBuilder.getMealId();
 
         //We do validation in the constructor to prevent incorrect input values being initializing during the object creation
-        if(mealBuilder.getBurger().isEmpty() || !mealBuilder.getBurger().equals(BurgerType.CHEESE) ||
+/*        if(mealBuilder.getBurger().isEmpty() || !mealBuilder.getBurger().equals(BurgerType.CHEESE) ||
             !mealBuilder.getBurger().equals(BurgerType.VEGGIE) || mealBuilder.getBurger().equals(BurgerType.CHICKEN)){
             throw new IllegalArgumentException("Incorrect input parameter");
-        }
+        }*/
         this.burger = mealBuilder.getBurger();
 
-        if(mealBuilder.getDrink().isEmpty() || !mealBuilder.getDrink().equals(DrinkType.COKE) ||
+/*        if(mealBuilder.getDrink().isEmpty() || !mealBuilder.getDrink().equals(DrinkType.COKE) ||
             !mealBuilder.getDrink().equals(DrinkType.FANTA) || mealBuilder.getDrink().equals(DrinkType.SPRITE)){
             throw new IllegalArgumentException("Incorrect input parameter");
-        }
+        }*/
         this.drink = mealBuilder.getDrink();
 
-        if(mealBuilder.getDessert().isEmpty() || !mealBuilder.getDessert().equals(DesertType.PASTERY) ||
+/*        if(mealBuilder.getDessert().isEmpty() || !mealBuilder.getDessert().equals(DesertType.PASTERY) ||
             !mealBuilder.getDessert().equals(DesertType.FROZEN) || mealBuilder.getDessert().equals(DesertType.PUDDING)){
             throw new IllegalArgumentException("Incorrect input parameter");
-        }
+        }*/
         this.dessert = mealBuilder.getDessert();
 
         this.fries = mealBuilder.isFries();
@@ -75,7 +75,16 @@ public class Meal {
         this.fries = fries;
     }
 
-
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "mealId='" + mealId + '\'' +
+                ", burger='" + burger + '\'' +
+                ", drink='" + drink + '\'' +
+                ", dessert='" + dessert + '\'' +
+                ", fries=" + fries +
+                '}';
+    }
 
     //Inner class is created since the constructor of the Student is private and cant be accessed outside the class
     public static class MealBuilder{
